@@ -1,0 +1,26 @@
+name: 'Create a patch from a fork'
+description: 'Patches a project with a patch created from a fork'
+inputs:
+  base_version:
+    description: 'The base version on which the patch will be based on'
+    required: true
+  project_dir:
+    description: 'The directory where the project that will be patched is located'
+    required: true
+  project_name:
+    description: 'The name of the project, which will be used in the patch version. If empty, the repo name will be used'
+    required: false
+  project_type:
+    description: 'The type of the project. Valid values are: civicrm-core, drupal-module'
+    required: true
+outputs:
+  version:
+    description: 'A string in the format <PROJECTNAME>+patch.<HASH>'
+  package:
+    description: 'The package contained the original project patched'
+  package_path:
+    description: 'The full path to the package file'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
