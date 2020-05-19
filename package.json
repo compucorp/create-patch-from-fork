@@ -1,0 +1,31 @@
+{
+  "name": "create-patch-from-fork",
+  "version": "1.0.0",
+  "description": "Patches a project with a patch created from a fork",
+  "main": "dist/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint 'src/**.js' --fix",
+    "build": "ncc build src/main.js && rm -rf dist/create-patch-from-fork",
+    "precommit": "npm run build && git add dist/index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1",
+    "@actions/github": "^1.1.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "0.20.4",
+    "eslint": "^6.7.2",
+    "eslint-config-semistandard": "^15.0.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsdoc": "^18.4.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.1.0"
+  }
+}
